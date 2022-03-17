@@ -1,0 +1,33 @@
+package com.example;
+
+public class main {
+    public static void main(String[] args) {
+        Bank bank = new Bank();
+        SavingsAccount SA1 =new SavingsAccount("Jason","Roy",Branch.MUMBAI);
+        SA1.deposit(2000);
+        bank.addCustomer(SA1);
+        SA1.withdraw(890);
+
+        SavingsAccount SA2 =new SavingsAccount("Aron","Finch",Branch.BANGALORE);
+        SA2.deposit(2800);
+        bank.addCustomer(SA2);
+        SA2.withdraw(740);
+
+        SavingsAccount SA3 =new SavingsAccount("Shane","Jane",Branch.BOSTON);
+        SA3.deposit(500);
+        bank.addCustomer(SA3);
+        SA3.withdraw(100);
+
+        CheckingAccount ca1 = new CheckingAccount("Nikhil", "Jakhwal", Branch.BANGALORE);
+        ca1.deposit(1200);
+        bank.addCustomer(ca1);
+        ca1.withdraw(350);
+
+        bank.generateReport();
+        bank.getNumOfCustomers();
+
+        System.out.println();
+        System.out.println("Number of Customers: "+bank.getNumOfCustomers());
+
+    }
+}
